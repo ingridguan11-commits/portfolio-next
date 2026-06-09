@@ -2,6 +2,7 @@
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
   return (
     <footer className="bg-card border-t border-border py-12 px-4 sm:px-6 lg:px-8">
@@ -73,7 +74,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/guan-yingying-resume.pdf"
+                  href={`${basePath}/guan-yingying-resume.pdf`}
                   download="关颖莹简历.pdf"
                   className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1"
                 >

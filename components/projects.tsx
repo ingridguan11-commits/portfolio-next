@@ -6,13 +6,15 @@ import { motion } from "framer-motion"
 import { AnimatedCard } from "./aceternity/animated-card"
 
 export default function Projects() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
   const projects = [
     {
       title: "AI口语助手",
       category: "产品项目",
       description: "主导商业分析与市场调研，定位跨国企业、国际游客等KA客群，设计企业年费/个人订阅的分层盈利模式。",
       technologies: ["商业分析", "市场调研", "用户触达5000+", "国赛三等奖"],
-      image: "/portfolio/xppen-visual.jpeg",
+      image: `${basePath}/portfolio/xppen-visual.jpeg`,
       gradient: "from-blue-500 to-cyan-500",
     },
     {
@@ -20,7 +22,7 @@ export default function Projects() {
       category: "营销策划",
       description: "围绕品牌沟通、活动玩法和视觉主张完成PPT/营销策划案制作，兼顾策略表达与主视觉呈现。",
       technologies: ["品牌策划", "PPT制作", "主视觉设计", "营销方案"],
-      image: "/portfolio/xppen-visual.jpeg",
+      image: `${basePath}/portfolio/xppen-visual.jpeg`,
       gradient: "from-purple-500 to-pink-500",
     },
     {
@@ -28,7 +30,7 @@ export default function Projects() {
       category: "摄影作品",
       description: "野生站姐兼拍修一体机，熟练运用Lightroom、Photoshop、醒图进行舞台和人像后期。",
       technologies: ["舞台摄影", "Lightroom", "Photoshop", "小红书17W播放"],
-      image: "/portfolio/stage-photography.jpeg",
+      image: `${basePath}/portfolio/stage-photography.jpeg`,
       gradient: "from-green-500 to-emerald-500",
     },
     {
@@ -36,7 +38,7 @@ export default function Projects() {
       category: "摄影作品",
       description: "以“作为乌鸦，不好吗？”为灵感，完成前期拍摄与LR、PS、像素蛋糕后期处理。",
       technologies: ["Canon R50", "50mm定焦", "LR+PS", "人像摄影"],
-      image: "/portfolio/portrait-buliang.jpeg",
+      image: `${basePath}/portfolio/portrait-buliang.jpeg`,
       gradient: "from-orange-500 to-red-500",
     },
     {
@@ -44,7 +46,7 @@ export default function Projects() {
       category: "AI视觉",
       description: "使用ChatGPT生成提示词，结合Midjourney、libulibu完成新闻纪实感摄影与产品摄影后期重构。",
       technologies: ["ChatGPT", "Midjourney", "AI后期", "产品摄影"],
-      image: "/portfolio/ai-documentary.jpeg",
+      image: `${basePath}/portfolio/ai-documentary.jpeg`,
       gradient: "from-indigo-500 to-blue-500",
     },
     {
@@ -52,7 +54,7 @@ export default function Projects() {
       category: "交互设计",
       description: "包含“穿越之我在养颜馆当掌柜”VR交互作品，以及全国大学生机器人大赛交互赛道一等奖作品。",
       technologies: ["VR交互", "机器人交互", "省赛二等奖", "全国一等奖"],
-      image: "/portfolio/vr-interaction.jpeg",
+      image: `${basePath}/portfolio/vr-interaction.jpeg`,
       gradient: "from-teal-500 to-cyan-500",
     },
   ]

@@ -1,14 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Script from "next/script"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const siteUrl = "https://ingridguan11-commits.github.io/portfolio/"
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "关颖莹 | 产品运营与视觉创作作品集",
   description:
     "关颖莹，深圳大学广告学数字策略方向本科生，关注产品运营、用户增长、内容策划、摄影、AI视觉与交互创作。",
@@ -58,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="zh-CN" suppressHydrationWarning>
       <head>
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-L3XQRP3SR9" />
         <Script

@@ -6,6 +6,8 @@ import { TextGenerateEffect } from "./aceternity/text-generate-effect"
 import { SilkBackground } from "./aceternity/silk-background"
 
 export default function Hero() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -104,7 +106,7 @@ export default function Hero() {
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </motion.a>
             <motion.a
-              href="/guan-yingying-resume.pdf"
+              href={`${basePath}/guan-yingying-resume.pdf`}
               download="关颖莹简历.pdf"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-primary/50 rounded-lg font-medium hover:bg-primary/10 hover:border-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               whileHover={{ scale: 1.05, y: -2 }}

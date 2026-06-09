@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { Download, Mail, Phone, Sparkles } from "lucide-react"
 
 export default function Contact() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,7 +45,7 @@ export default function Contact() {
       icon: Download,
       label: "简历",
       value: "下载PDF简历",
-      href: "/guan-yingying-resume.pdf",
+      href: `${basePath}/guan-yingying-resume.pdf`,
       color: "from-gray-600 to-gray-800",
     },
   ]
