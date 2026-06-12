@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { HoverEffect } from "./aceternity/hover-effect"
-import { BarChart3, Camera, Code2, GraduationCap, Mail, MapPin, Megaphone, PenTool, Phone, Sparkles, Users } from "lucide-react"
+import { BarChart3, Camera, Code2, ExternalLink, Megaphone, PenTool, Sparkles, Users } from "lucide-react"
 
 export default function About() {
   const containerVariants = {
@@ -27,15 +27,14 @@ export default function About() {
 
   const highlights = [
     {
-      title: "用户运营与增长",
-      description:
-        "基于AARRR模型设计校园增长活动，搭建并运营7+校园社群，覆盖2000+用户。",
-      icon: <Users size={28} strokeWidth={1.5} className="text-primary" />,
+      title: "产品策划与AI开发",
+      description: "具备需求分析、功能规划和商业模式设计能力，能够运用Codex、Claude Code等AI工具进行Vibe Coding。",
+      icon: <PenTool size={28} strokeWidth={1.5} className="text-primary" />,
     },
     {
       title: "内容策划与账号运营",
       description:
-        "参与小红书奢侈品垂类账号从0到1搭建，完成内容策划、养号策略与私域转化SOP。",
+        "小红书个人IP运营，打造过超40W播放、4W点赞以及17W播放、4.4K点赞的视频爆款。参与小红书奢侈品垂类账号从0到1搭建，完成内容策划、养号策略与私域转化SOP。",
       icon: <Megaphone size={28} strokeWidth={1.5} className="text-primary" />,
     },
     {
@@ -54,9 +53,10 @@ export default function About() {
       icon: <Sparkles size={28} strokeWidth={1.5} className="text-primary" />,
     },
     {
-      title: "产品策划与AI开发",
-      description: "具备需求分析、功能规划和商业模式设计能力，能够运用Codex、Claude Code等AI工具进行Vibe Coding。",
-      icon: <PenTool size={28} strokeWidth={1.5} className="text-primary" />,
+      title: "用户运营与增长",
+      description:
+        "基于AARRR模型设计校园增长活动，搭建并运营7+校园社群，覆盖2000+用户。",
+      icon: <Users size={28} strokeWidth={1.5} className="text-primary" />,
     },
     {
       title: "交互设计与项目落地",
@@ -84,7 +84,7 @@ export default function About() {
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
               关于{" "}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                Jade
+                我
               </span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full" />
@@ -105,49 +105,46 @@ export default function About() {
               <span className="font-semibold text-foreground">拍修一体机、野生站姐、不知名美食博主、小红书深度用户</span>。
               这些身份共同组成了我的内容敏感度和视觉表达能力。
             </p>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl font-bold mb-8 text-foreground">核心能力</h3>
-            <HoverEffect items={highlights} />
+            <div className="mt-8 flex flex-wrap gap-3">
+              {["立即到岗", "所在地深圳", "全国可飞", "可长期实习6个月及以上"].map((status) => (
+                <span
+                  key={status}
+                  className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-foreground shadow-sm"
+                >
+                  <span className="h-2 w-2 rounded-full bg-primary" aria-hidden="true" />
+                  {status}
+                </span>
+              ))}
+            </div>
+            <a
+              href="https://xhslink.com/m/1kmgsKXD5cr"
+              target="_blank"
+              rel="noreferrer"
+              className="group mt-8 flex flex-col gap-6 overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-red-50 via-card to-rose-100 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:from-red-950/30 dark:via-card dark:to-rose-950/30 sm:flex-row sm:items-center sm:justify-between"
+              aria-label="在新标签页打开关颖莹的小红书主页"
+            >
+              <div className="flex items-center gap-5">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#ff2442] text-xl font-black text-white shadow-lg shadow-red-500/20">
+                  RED
+                </div>
+                <div>
+                  <p className="mb-1 text-sm font-semibold tracking-widest text-primary">小红书 · REDNOTE</p>
+                  <h3 className="text-xl font-bold text-foreground sm:text-2xl">查看更多摄影、内容与生活灵感</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    记录舞台摄影、人像创作、探店内容与日常观察。
+                  </p>
+                </div>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform group-hover:translate-x-1 sm:self-auto">
+                访问小红书
+                <ExternalLink className="h-4 w-4" />
+              </span>
+            </a>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold mb-8 text-foreground">个人信息</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { label: "所在地", value: "中国深圳", icon: <MapPin size={24} strokeWidth={1.5} /> },
-                {
-                  label: "邮箱",
-                  value: "ingridguan11@163.com",
-                  link: "mailto:ingridguan11@163.com",
-                  icon: <Mail size={24} strokeWidth={1.5} />,
-                },
-                {
-                  label: "电话 / 微信",
-                  value: "13427272681",
-                  link: "tel:+8613427272681",
-                  icon: <Phone size={24} strokeWidth={1.5} />,
-                },
-                { label: "教育背景", value: "深圳大学 · 广告学", icon: <GraduationCap size={24} strokeWidth={1.5} /> },
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  className="p-4 bg-card rounded-lg border border-border hover:border-primary transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="text-primary mb-2">{item.icon}</div>
-                  <p className="text-xs text-muted-foreground mb-1">{item.label}</p>
-                  {item.link ? (
-                    <a href={item.link} className="font-semibold text-primary hover:underline text-sm">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="font-semibold text-foreground text-sm">{item.value}</p>
-                  )}
-                </motion.div>
-              ))}
-            </div>
+            <h3 className="text-2xl font-bold mb-8 text-foreground">核心能力</h3>
+            <HoverEffect items={highlights} />
           </motion.div>
         </motion.div>
       </div>

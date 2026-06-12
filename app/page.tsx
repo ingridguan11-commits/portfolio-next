@@ -5,7 +5,6 @@ import Header from "@/components/header"
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Skills from "@/components/skills"
-import WorkProcess from "@/components/work-process"
 import Experience from "@/components/experience"
 import Projects from "@/components/projects"
 import Contact from "@/components/contact"
@@ -41,7 +40,6 @@ export default function Home() {
         <About />
         <Experience />
         <Skills />
-        <WorkProcess />
         <Projects />
         <Contact />
       </main>

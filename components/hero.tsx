@@ -115,11 +115,21 @@ export default function Hero() {
               下载简历
               <Download className="w-4 h-4" aria-hidden="true" />
             </motion.a>
+            <motion.a
+              href={`${basePath}/guan-yingying-portfolio.pdf`}
+              download="关颖莹作品集.pdf"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-primary/50 rounded-lg font-medium hover:bg-primary/10 hover:border-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              下载作品集
+              <Download className="w-4 h-4" aria-hidden="true" />
+            </motion.a>
           </motion.div>
 
           <motion.div variants={itemVariants} className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             {[
-              { value: "2000+", label: "社群用户覆盖" },
+              { value: "AI", label: "NATIVE" },
               { value: "14W+", label: "校园活动曝光" },
               { value: "11W+", label: "商业合作金额" },
             ].map((stat, idx) => (

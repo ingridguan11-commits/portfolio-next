@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Award, Camera, Sparkles } from "lucide-react"
+import { Award, Camera, ExternalLink, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
 import { AnimatedCard } from "./aceternity/animated-card"
 
@@ -14,7 +14,10 @@ export default function Projects() {
       category: "产品项目",
       description: "主导商业分析与市场调研，定位跨国企业、国际游客等KA客群，设计企业年费/个人订阅的分层盈利模式。",
       technologies: ["商业分析", "市场调研", "用户触达5000+", "国赛三等奖"],
-      image: `${basePath}/portfolio/xppen-visual.jpeg`,
+      image: `${basePath}/portfolio/native-speaker-cover.png`,
+      href: `${basePath}/portfolio/native-speaker.pdf`,
+      imageClassName: "object-contain",
+      imageBackground: "bg-[#f2f2f2]",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
@@ -22,7 +25,10 @@ export default function Projects() {
       category: "营销策划",
       description: "围绕品牌沟通、活动玩法和视觉主张完成PPT/营销策划案制作，兼顾策略表达与主视觉呈现。",
       technologies: ["品牌策划", "PPT制作", "主视觉设计", "营销方案"],
-      image: `${basePath}/portfolio/xppen-visual.jpeg`,
+      image: `${basePath}/portfolio/xppen-cover.png`,
+      href: `${basePath}/portfolio/xppen-campaign.pdf`,
+      imageClassName: "object-contain",
+      imageBackground: "bg-black",
       gradient: "from-purple-500 to-pink-500",
     },
     {
@@ -90,21 +96,29 @@ export default function Projects() {
           whileInView="visible"
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {projects.map((project, idx) => (
+          {projects.map((project) => (
             <AnimatedCard key={project.title} className="h-full">
-              <div className="group relative bg-card rounded-lg border border-border hover:border-primary transition-all hover:shadow-xl h-full overflow-hidden">
+              <a
+                href={project.href}
+                target={project.href ? "_blank" : undefined}
+                rel={project.href ? "noreferrer" : undefined}
+                className={`group relative block h-full overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-primary hover:shadow-xl ${
+                  project.href ? "cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" : ""
+                }`}
+                aria-label={project.href ? `查看${project.title}完整项目` : undefined}
+              >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                 />
 
                 <div className="relative z-10">
-                  <div className="relative h-52 w-full overflow-hidden bg-secondary/20">
+                  <div className={`relative h-52 w-full overflow-hidden ${project.imageBackground ?? "bg-secondary/20"}`}>
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className={`${project.imageClassName ?? "object-cover"} transition-transform duration-500 group-hover:scale-105`}
                     />
                   </div>
 
@@ -133,9 +147,15 @@ export default function Projects() {
                         </motion.span>
                       ))}
                     </div>
+                    {project.href && (
+                      <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                        查看完整项目
+                        <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    )}
                   </div>
                 </div>
-              </div>
+              </a>
             </AnimatedCard>
           ))}
         </motion.div>

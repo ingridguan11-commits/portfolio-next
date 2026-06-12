@@ -16,7 +16,6 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
     { href: "#about", label: "关于我" },
     { href: "#experience", label: "实习经历" },
     { href: "#skills", label: "专业能力" },
-    { href: "#process", label: "工作方法" },
     { href: "#projects", label: "作品展示" },
     { href: "#contact", label: "联系我" },
   ]

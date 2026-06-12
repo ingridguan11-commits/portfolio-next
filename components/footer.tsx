@@ -37,14 +37,6 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#process"
-                  className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1"
-                >
-                  工作方法
-                </a>
-              </li>
-              <li>
-                <a
                   href="#projects"
                   className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1"
                 >

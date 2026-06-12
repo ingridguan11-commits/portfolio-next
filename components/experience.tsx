@@ -6,8 +6,11 @@ import { Calendar } from "lucide-react"
 export default function Experience() {
   const experiences = [
     {
-      title: "旅拍圈层运营实习生",
+      title: "旅拍圈层运营实习生 / 项目管理实习生",
       company: "vivo 全球总部",
+      department: "TO G 营销部",
+      overview:
+        "旅拍项目业务概述：通过 to B 组织 / to C 关键人的推荐建联目标旅行社，和旅行社在导游培育、路线联名、品牌曝光等层面多维度合作，打造专属团友权益，实现 vivo 手机旅拍场景的宣发和转化。",
       period: "2026.03 – 至今",
       location: "中国",
       highlights: [
@@ -19,14 +22,17 @@ export default function Experience() {
     },
     {
       title: "产品运营实习生",
-      company: "迅雷 · 浏览器业务",
+      company: "迅雷网络科技公司",
+      department: "迅雷云事业群",
+      overview:
+        "迅雷浏览器业务概述：迅雷浏览器是一款极简风格的极速浏览器，用户可以通过流畅播、漫画模式、极简模式等功能享受极致视听体验。该产品目前处于 0-1 阶段，用户规模逐步扩张，我负责其中的社区板块。",
       period: "2025.12 – 2026.03",
       location: "中国",
       highlights: [
-        "参与资源型社区竞品调研，助推社区分区、用户共建机制与内容激励思路落地",
-        "策划3场校园活动，累计曝光1W+，搭建并运营7+校园社群，覆盖2000+用户",
-        "跟进1000+用户客诉数据，推动边下边播、密码保险箱等高频需求进入优化队列",
-        "优化站点管理与H5页面布局，使访问失败率由25%下降至11%，页面作品点击率提升至15%",
+        "竞品调研与社区运营优化：从用户视角体验资源型社区（BBS论坛、贴吧）玩法，助推用户社区分区、用户共建机制功能落地，为社区提供资源—博主—私域/公域链路、内容激励机制的运营思路；设计春节社区运营方案，提升社区活跃率0.2%。",
+        "用户运营与校园增长策略：根据AARRR模型策划落地3场校园活动，累计曝光1W+人次；搭建并运营7+校园社群，覆盖2000+用户，首期会员拉新率30%；通过互动抽奖、资源分享等形式维持社群10%互动率，用户拉新率提升11%。",
+        "产品迭代与用户反馈闭环：跟进用户客诉数据1000余条，推动“边下边播”“密码保险箱”等高频需求进入优化队列，协助安卓端评分从4.0提升至4.1；组织4场高校产品茶话会，提炼小说、漫画爱好者痛点需求，推动韩漫、日漫模式等功能上线。",
+        "站点管理与体验优化：监控误封站点数据，解封60日内有访问记录的误封站点，使访问失败率由25%下降至11%；优化站点管理后台，提高头部站点打标效率；优化H5页面布局，解决页面屏效浪费问题，页面作品点击率提升至15%。",
       ],
     },
     {
@@ -114,7 +120,14 @@ export default function Experience() {
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                   <div>
                     <h3 className="font-bold text-lg text-foreground">{exp.title}</h3>
-                    <p className="text-primary font-medium">{exp.company}</p>
+                    <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-primary font-medium">
+                      <span>{exp.company}</span>
+                      {exp.department && (
+                        <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
+                          {exp.department}
+                        </span>
+                      )}
+                    </p>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="w-4 h-4" aria-hidden="true" />
@@ -123,6 +136,11 @@ export default function Experience() {
                 </div>
 
                 <p className="text-sm text-muted-foreground mb-4">{exp.location}</p>
+                {exp.overview && (
+                  <p className="mb-5 rounded-lg border border-primary/15 bg-primary/5 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
+                    {exp.overview}
+                  </p>
+                )}
 
                 <ul className="space-y-2">
                   {exp.highlights.map((highlight, i) => (
