@@ -1,0 +1,68 @@
+name: Deploy to legacy GitHub Pages URL
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-portfolio-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout portfolio-next
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Verify static export
+        run: |
+          test -f out/index.html
+          test -f out/.nojekyll
+          test -d out/_next/static
+
+      - name: Checkout legacy portfolio repository
+        uses: actions/checkout@v4
+        with:
+          repository: ingridguan11-commits/portfolio
+          ref: main
+          token: ${{ secrets.PORTFOLIO_DEPLOY_TOKEN }}
+          path: legacy-pages
+
+      - name: Replace legacy site with static export
+        run: |
+          find legacy-pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -R out/. legacy-pages/
+
+      - name: Commit and deploy
+        working-directory: legacy-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+
+          if git diff --cached --quiet; then
+            echo "No deployment changes."
+            exit 0
+          fi
+
+          git commit -m "chore(deploy): publish portfolio-next"
+          git push origin main
