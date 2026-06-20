@@ -14,9 +14,10 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
 
   const navLinks = [
     { href: "#about", label: "关于我" },
+    { href: "#ai-native", label: "AI NATIVE" },
     { href: "#experience", label: "实习经历" },
-    { href: "#skills", label: "专业能力" },
     { href: "#projects", label: "作品展示" },
+    { href: "#skills", label: "专业能力" },
     { href: "#contact", label: "联系我" },
   ]
 
@@ -39,7 +40,7 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
               className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:rounded"
             >
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">GY</span>
+                <span className="text-primary-foreground font-bold text-sm">YY</span>
               </div>
               <span className="font-bold text-lg hidden sm:inline">关颖莹</span>
             </Link>

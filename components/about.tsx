@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { HoverEffect } from "./aceternity/hover-effect"
-import { BarChart3, Camera, Code2, ExternalLink, Megaphone, PenTool, Sparkles, Users } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 export default function About() {
   const containerVariants = {
@@ -24,46 +23,6 @@ export default function About() {
       transition: { duration: 0.8, ease: "easeOut" },
     },
   }
-
-  const highlights = [
-    {
-      title: "产品策划与AI开发",
-      description: "具备需求分析、功能规划和商业模式设计能力，能够运用Codex、Claude Code等AI工具进行Vibe Coding。",
-      icon: <PenTool size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "内容策划与账号运营",
-      description:
-        "小红书个人IP运营，打造过超40W播放、4W点赞以及17W播放、4.4K点赞的视频爆款。参与小红书奢侈品垂类账号从0到1搭建，完成内容策划、养号策略与私域转化SOP。",
-      icon: <Megaphone size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "数据分析与复盘",
-      description: "使用Excel、SPSS与SQL处理和分析用户反馈、广告效果及业务数据，把数据洞察转化为运营优化建议。",
-      icon: <BarChart3 size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "摄影与视觉设计",
-      description: "擅长舞台、人像、风景与商业摄影，熟练使用LR、PS、醒图、剪映与可画。",
-      icon: <Camera size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "AI辅助创作",
-      description: "使用ChatGPT、Midjourney、ComfyUI完成AI摄影、AI后期与产品创意表达。",
-      icon: <Sparkles size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "用户运营与增长",
-      description:
-        "基于AARRR模型设计校园增长活动，搭建并运营7+校园社群，覆盖2000+用户。",
-      icon: <Users size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "交互设计与项目落地",
-      description: "完成品牌策划、VR交互和机器人交互项目，获得多项设计与交互类竞赛奖项。",
-      icon: <Code2 size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-  ]
 
   return (
     <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -140,11 +99,6 @@ export default function About() {
                 <ExternalLink className="h-4 w-4" />
               </span>
             </a>
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold mb-8 text-foreground">核心能力</h3>
-            <HoverEffect items={highlights} />
           </motion.div>
         </motion.div>
       </div>

@@ -129,26 +129,45 @@ export default function Hero() {
 
           <motion.div variants={itemVariants} className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             {[
-              { value: "AI", label: "NATIVE" },
+              { value: "AI", label: "NATIVE", href: "#ai-native" },
               { value: "14W+", label: "校园活动曝光" },
               { value: "11W+", label: "商业合作金额" },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                whileHover={{ scale: 1.1 }}
-                className="p-4 rounded-lg bg-card border border-border/50 hover:border-primary transition-colors"
-              >
-                <motion.div
-                  className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, delay: idx * 0.2, repeat: Number.POSITIVE_INFINITY }}
+            ].map((stat, idx) => {
+              const content = (
+                <>
+                  <motion.div
+                    className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 2, delay: idx * 0.2, repeat: Number.POSITIVE_INFINITY }}
+                  >
+                    {stat.value}
+                  </motion.div>
+                  <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
+                </>
+              )
+
+              return stat.href ? (
+                <motion.a
+                  key={idx}
+                  href={stat.href}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  className="p-4 rounded-lg bg-card border border-border/50 hover:border-primary transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label="跳转到AI NATIVE模块"
                 >
-                  {stat.value}
+                  {content}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={idx}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.1 }}
+                  className="p-4 rounded-lg bg-card border border-border/50 hover:border-primary transition-colors"
+                >
+                  {content}
                 </motion.div>
-                <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
-              </motion.div>
-            ))}
+              )
+            })}
           </motion.div>
         </motion.div>
       </section>

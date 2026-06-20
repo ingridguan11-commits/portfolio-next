@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import Header from "@/components/header"
 import Hero from "@/components/hero"
 import About from "@/components/about"
+import AINative from "@/components/ai-native"
+import CoreAbilities from "@/components/core-abilities"
 import Skills from "@/components/skills"
 import Experience from "@/components/experience"
 import Projects from "@/components/projects"
@@ -38,9 +40,11 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <AINative />
+        <CoreAbilities />
         <Experience />
-        <Skills />
         <Projects />
+        <Skills />
         <Contact />
       </main>
       <Footer />

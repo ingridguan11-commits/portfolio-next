@@ -66,10 +66,7 @@ export default function Contact() {
               联系
             </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            欢迎围绕产品运营、内容增长、视觉创作、摄影项目或校园合作交流。
-          </p>
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto" />
         </motion.div>
 
         

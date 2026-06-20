@@ -21,6 +21,14 @@ export default function Footer() {
               </li>
               <li>
                 <a
+                  href="#ai-native"
+                  className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1"
+                >
+                  AI NATIVE
+                </a>
+              </li>
+              <li>
+                <a
                   href="#experience"
                   className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1"
                 >
@@ -29,18 +37,18 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#skills"
-                  className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1"
-                >
-                  专业能力
-                </a>
-              </li>
-              <li>
-                <a
                   href="#projects"
                   className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1"
                 >
                   作品展示
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1"
+                >
+                  专业能力
                 </a>
               </li>
             </ul>
