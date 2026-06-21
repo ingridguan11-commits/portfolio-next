@@ -95,6 +95,7 @@ export default function AINative() {
         },
       ],
       href: `${basePath}/portfolio/photography-portfolio.pdf#page=4`,
+      linkLabel: "跳转摄影作品集第4页",
     },
     {
       title: "Obsidian + Claude Code 知识库",
@@ -125,13 +126,19 @@ export default function AINative() {
         },
         { label: "数据看板", shortLabel: "BI", className: "bg-gradient-to-br from-green-500 to-emerald-700 text-white" },
       ],
+      href: "https://vivo-to-g-dashboard-3qiw.vercel.app/",
+      linkLabel: "查看数据看板",
     },
     {
       title: "ChatGPT 自媒体脚本创作",
       description: "用ChatGPT辅助完成选题拆解、爆款结构分析、标题优化和短视频脚本初稿，提高内容策划与迭代效率。",
       connector: "arrow" as const,
       tools: [
-        { label: "ChatGPT", shortLabel: "GPT", className: "bg-gradient-to-br from-[#10a37f] to-[#08735f] text-white" },
+        {
+          label: "ChatGPT",
+          image: `${basePath}/portfolio/icons/openai.png`,
+          className: "bg-white text-slate-900 ring-1 ring-border",
+        },
         { label: "自媒体脚本", shortLabel: "Script", className: "bg-pink-100 text-pink-600 ring-1 ring-pink-200" },
       ],
     },
@@ -206,7 +213,7 @@ export default function AINative() {
                     <p className="text-sm leading-relaxed text-muted-foreground">{card.description}</p>
                     {card.href && (
                       <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                        跳转摄影作品集第4页
+                        {card.linkLabel}
                         <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                       </span>
                     )}
