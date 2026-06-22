@@ -66,7 +66,7 @@ export default function Hero() {
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
             >
               <Sparkles className="w-4 h-4" aria-hidden="true" />
-              产品运营 · 视觉创作作品集
+              产品策划 · 产品运营 · 视觉创作作品集
             </motion.div>
           </motion.div>
 
@@ -83,12 +83,12 @@ export default function Hero() {
             variants={itemVariants}
             className="text-xl sm:text-2xl text-muted-foreground mb-4 text-balance font-semibold"
           >
-            产品运营 / 内容策划 / 视觉创作
+            产品策划 / 产品运营 / 内容策划 / 视觉创作
           </motion.p>
 
           <motion.div variants={itemVariants} className="mb-12">
             <TextGenerateEffect
-              words="深圳大学广告学数字策略方向本科生，拥有产品运营、用户增长、内容策划、视觉设计与摄影创作经验，擅长将用户洞察转化为可落地的运营策略。"
+              words="深圳大学广告学数字策略方向本科生，拥有产品策划、产品运营、用户增长、内容策划、视觉设计与摄影创作经验，擅长将用户洞察转化为可落地的产品与运营策略。"
               className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed"
               duration={0.05}
               filter={true}
@@ -122,7 +122,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              下载作品集
+              视觉作品集
               <Download className="w-4 h-4" aria-hidden="true" />
             </motion.a>
           </motion.div>
