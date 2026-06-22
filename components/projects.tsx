@@ -10,6 +10,16 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "熵减",
+      category: "产品项目",
+      description: "熵减是个人秩序系统。目标不是变成完美机器，而是在混乱扩张前，先夺回一点控制权。",
+      technologies: ["PWA", "自我管理", "个人秩序系统", "AI产品"],
+      href: "https://entropy-reduction-pwa.vercel.app/",
+      coverIcon: `${basePath}/portfolio/little-devil.png`,
+      imageBackground: "bg-gradient-to-br from-stone-100 via-rose-100 to-slate-200",
+      gradient: "from-rose-500 to-red-500",
+    },
+    {
       title: "AI口语助手",
       category: "产品项目",
       description: "主导商业分析与市场调研，定位跨国企业、国际游客等KA客群，设计企业年费/个人订阅的分层盈利模式。",
@@ -111,13 +121,32 @@ export default function Projects() {
 
                 <div className="relative z-10">
                   <div className={`relative h-52 w-full overflow-hidden ${project.imageBackground ?? "bg-secondary/20"}`}>
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className={`${project.imageClassName ?? "object-cover"} transition-transform duration-500 group-hover:scale-105`}
-                    />
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className={`${project.imageClassName ?? "object-cover"} transition-transform duration-500 group-hover:scale-105`}
+                      />
+                    ) : (
+                      <div className="relative flex h-full items-center justify-center overflow-hidden">
+                        <div className="absolute left-8 top-6 h-20 w-20 rounded-full bg-white/45 blur-xl" />
+                        <div className="absolute bottom-7 right-8 h-24 w-24 rounded-full bg-rose-200/45 blur-2xl" />
+                        <div className="absolute inset-x-10 bottom-8 h-px bg-white/60" />
+                        <div className="relative flex h-28 w-28 items-center justify-center rounded-[2rem] bg-white/55 p-5 shadow-[0_18px_60px_rgba(120,91,91,0.18)] ring-1 ring-white/70 backdrop-blur-md transition-transform duration-500 group-hover:scale-105">
+                          {project.coverIcon && (
+                            <Image
+                              src={project.coverIcon}
+                              alt="小恶魔封面图"
+                              width={88}
+                              height={88}
+                              className="h-full w-full object-contain"
+                            />
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   <div className="p-6">

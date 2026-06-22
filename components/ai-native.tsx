@@ -82,6 +82,8 @@ export default function AINative() {
           className: "bg-[#f8efe6] ring-1 ring-orange-200",
         },
       ],
+      href: "https://entropy-reduction-pwa.vercel.app/",
+      linkLabel: "体验熵减 PWA",
     },
     {
       title: "AI 辅助视觉创作",
