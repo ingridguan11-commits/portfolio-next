@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink } from "lucide-react"
 
 export default function About() {
   const containerVariants = {
@@ -77,30 +76,6 @@ export default function About() {
                 </span>
               ))}
             </div>
-            <a
-              href="https://xhslink.com/m/1kmgsKXD5cr"
-              target="_blank"
-              rel="noreferrer"
-              className="group mt-8 flex flex-col gap-6 overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-red-50 via-card to-rose-100 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:from-red-950/30 dark:via-card dark:to-rose-950/30 sm:flex-row sm:items-center sm:justify-between"
-              aria-label="在新标签页打开关颖莹的小红书主页"
-            >
-              <div className="flex items-center gap-5">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#ff2442] text-xl font-black text-white shadow-lg shadow-red-500/20">
-                  RED
-                </div>
-                <div>
-                  <p className="mb-1 text-sm font-semibold tracking-widest text-primary">小红书 · REDNOTE</p>
-                  <h3 className="text-xl font-bold text-foreground sm:text-2xl">查看更多摄影、内容与生活灵感</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    记录舞台摄影、人像创作、探店内容与日常观察。
-                  </p>
-                </div>
-              </div>
-              <span className="inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform group-hover:translate-x-1 sm:self-auto">
-                访问小红书
-                <ExternalLink className="h-4 w-4" />
-              </span>
-            </a>
           </motion.div>
         </motion.div>
       </div>

@@ -8,7 +8,7 @@ export default function Skills() {
     {
       title: "运营与增长",
       icon: Megaphone,
-      skills: ["用户运营", "内容运营", "社群运营", "活动策划", "竞品调研", "AARRR模型"],
+      skills: ["用户运营", "内容运营", "社群运营", "活动策划", "竞品调研"],
       color: "from-blue-500 to-cyan-500",
     },
     {

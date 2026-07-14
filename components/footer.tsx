@@ -75,10 +75,10 @@ export default function Footer() {
               <li>
                 <a
                   href={`${basePath}/guan-yingying-resume.pdf`}
-                  download="关颖莹简历.pdf"
+                  download="关颖莹 产品运营-商业化运营简历.pdf"
                   className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1"
                 >
-                  下载简历
+                  产品运营 / 商业化运营简历
                 </a>
               </li>
             </ul>

@@ -15,9 +15,10 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
   const navLinks = [
     { href: "#about", label: "关于我" },
     { href: "#ai-native", label: "AI NATIVE" },
-    { href: "#experience", label: "实习经历" },
     { href: "#projects", label: "作品展示" },
+    { href: "#core-abilities", label: "核心能力" },
     { href: "#skills", label: "专业能力" },
+    { href: "#experience", label: "实习经历" },
     { href: "#contact", label: "联系我" },
   ]
 

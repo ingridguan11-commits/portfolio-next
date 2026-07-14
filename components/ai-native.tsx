@@ -67,23 +67,19 @@ export default function AINative() {
 
   const cards = [
     {
-      title: "产品策划与 AI 开发",
-      description: "具备需求分析、功能规划和商业模式设计能力，能够运用Codex、Claude Code等AI工具进行Vibe Coding。",
-      connector: "none" as const,
+      title: "AI自媒体IP搭建",
+      description: "结合ChatGPT完成选题拆解、脚本结构、标题优化与账号定位，探索AI工具辅助自媒体内容生产和IP表达。",
+      connector: "arrow" as const,
       tools: [
         {
-          label: "Codex",
-          image: `${basePath}/portfolio/icons/codex-color.png`,
+          label: "ChatGPT",
+          image: `${basePath}/portfolio/icons/openai.png`,
           className: "bg-white text-slate-900 ring-1 ring-border",
         },
-        {
-          label: "Claude Code",
-          image: `${basePath}/portfolio/icons/claude-color.png`,
-          className: "bg-[#f8efe6] ring-1 ring-orange-200",
-        },
+        { label: "AI自媒体IP", shortLabel: "IP", className: "bg-pink-100 text-pink-600 ring-1 ring-pink-200" },
       ],
-      href: "https://entropy-reduction-pwa.vercel.app/",
-      linkLabel: "体验熵减 PWA",
+      href: "https://v.douyin.com/zTGHskRv86Y/",
+      linkLabel: "查看AI自媒体作品",
     },
     {
       title: "AI 辅助视觉创作",
@@ -131,19 +127,6 @@ export default function AINative() {
       href: "https://vivo-to-g-dashboard-3qiw.vercel.app/",
       linkLabel: "查看数据看板",
     },
-    {
-      title: "ChatGPT 自媒体脚本创作",
-      description: "用ChatGPT辅助完成选题拆解、爆款结构分析、标题优化和短视频脚本初稿，提高内容策划与迭代效率。",
-      connector: "arrow" as const,
-      tools: [
-        {
-          label: "ChatGPT",
-          image: `${basePath}/portfolio/icons/openai.png`,
-          className: "bg-white text-slate-900 ring-1 ring-border",
-        },
-        { label: "自媒体脚本", shortLabel: "Script", className: "bg-pink-100 text-pink-600 ring-1 ring-pink-200" },
-      ],
-    },
   ]
 
   const containerVariants = {
@@ -188,7 +171,7 @@ export default function AINative() {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 xl:grid-cols-5 gap-5"
+          className="grid md:grid-cols-2 xl:grid-cols-4 gap-5"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

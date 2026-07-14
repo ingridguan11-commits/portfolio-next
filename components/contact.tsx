@@ -44,7 +44,7 @@ export default function Contact() {
     {
       icon: Download,
       label: "简历",
-      value: "下载PDF简历",
+      value: "产品运营 / 商业化运营简历",
       href: `${basePath}/guan-yingying-resume.pdf`,
       color: "from-gray-600 to-gray-800",
     },
@@ -98,7 +98,7 @@ export default function Contact() {
                     target={method.external ? "_blank" : undefined}
                     rel={method.external ? "noopener noreferrer" : undefined}
                     className="text-primary hover:underline text-sm flex items-center justify-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary focus:rounded"
-                    download={method.label === "简历" ? "关颖莹简历.pdf" : undefined}
+                    download={method.label === "简历" ? "关颖莹 产品运营-商业化运营简历.pdf" : undefined}
                   >
                     {method.value}
                     {method.label === "简历" && <Sparkles className="w-3 h-3" aria-hidden="true" />}

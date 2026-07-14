@@ -41,10 +41,10 @@ export default function Home() {
         <Hero />
         <About />
         <AINative />
-        <CoreAbilities />
-        <Experience />
         <Projects />
+        <CoreAbilities />
         <Skills />
+        <Experience />
         <Contact />
       </main>
       <Footer />

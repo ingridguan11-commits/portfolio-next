@@ -107,12 +107,12 @@ export default function Hero() {
             </motion.a>
             <motion.a
               href={`${basePath}/guan-yingying-resume.pdf`}
-              download="关颖莹简历.pdf"
+              download="关颖莹 产品运营-商业化运营简历.pdf"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-primary/50 rounded-lg font-medium hover:bg-primary/10 hover:border-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              下载简历
+              产品运营 / 商业化运营简历
               <Download className="w-4 h-4" aria-hidden="true" />
             </motion.a>
             <motion.a
@@ -130,8 +130,8 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             {[
               { value: "AI", label: "NATIVE", href: "#ai-native" },
-              { value: "14W+", label: "校园活动曝光" },
-              { value: "11W+", label: "商业合作金额" },
+              { value: "50W+", label: "自媒体作品曝光" },
+              { value: "5W+", label: "AI自媒体曝光", href: "https://v.douyin.com/zTGHskRv86Y/" },
             ].map((stat, idx) => {
               const content = (
                 <>
@@ -153,7 +153,9 @@ export default function Hero() {
                   variants={itemVariants}
                   whileHover={{ scale: 1.1 }}
                   className="p-4 rounded-lg bg-card border border-border/50 hover:border-primary transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                  aria-label="跳转到AI NATIVE模块"
+                  target={stat.href.startsWith("http") ? "_blank" : undefined}
+                  rel={stat.href.startsWith("http") ? "noreferrer" : undefined}
+                  aria-label={stat.href.startsWith("http") ? `打开${stat.label}` : "跳转到AI NATIVE模块"}
                 >
                   {content}
                 </motion.a>

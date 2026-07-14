@@ -20,6 +20,20 @@ export default function Projects() {
       gradient: "from-rose-500 to-red-500",
     },
     {
+      title: "娱乐爆款视频打造",
+      category: "内容增长",
+      description:
+        "热点洞察能力强，明星“野生站姐”音乐节出图视频获17W+播放、4000+点赞，另有追踪热播剧话题短视频，单条播放40W+，点赞4W+。",
+      technologies: ["热点洞察", "短视频策划", "小红书", "内容增长"],
+      image: `${basePath}/portfolio/stage-photography.jpeg`,
+      href: "http://xhslink.com/o/4PPJ5k6W83H",
+      links: [
+        { label: "音乐节出图视频", href: "http://xhslink.com/o/4PPJ5k6W83H" },
+        { label: "热播剧话题短视频", href: "http://xhslink.com/o/3WFPhMxtbmp" },
+      ],
+      gradient: "from-pink-500 to-rose-500",
+    },
+    {
       title: "AI口语助手",
       category: "产品项目",
       description: "主导商业分析与市场调研，定位跨国企业、国际游客等KA客群，设计企业年费/个人订阅的分层盈利模式。",
@@ -104,17 +118,21 @@ export default function Projects() {
           whileInView="visible"
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {projects.map((project) => (
-            <AnimatedCard key={project.title} className="h-full">
-              <a
-                href={project.href}
-                target={project.href ? "_blank" : undefined}
-                rel={project.href ? "noreferrer" : undefined}
-                className={`group relative block h-full overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-primary hover:shadow-xl ${
-                  project.href ? "cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" : ""
-                }`}
-                aria-label={project.href ? `查看${project.title}完整项目` : undefined}
-              >
+          {projects.map((project) => {
+            const hasMultipleLinks = Boolean(project.links?.length)
+            const CardTag = hasMultipleLinks ? motion.div : motion.a
+
+            return (
+              <AnimatedCard key={project.title} className="h-full">
+                <CardTag
+                  href={!hasMultipleLinks ? project.href : undefined}
+                  target={!hasMultipleLinks && project.href ? "_blank" : undefined}
+                  rel={!hasMultipleLinks && project.href ? "noreferrer" : undefined}
+                  className={`group relative block h-full overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-primary hover:shadow-xl ${
+                    project.href ? "cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" : ""
+                  }`}
+                  aria-label={!hasMultipleLinks && project.href ? `查看${project.title}完整项目` : undefined}
+                >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                 />
@@ -174,7 +192,22 @@ export default function Projects() {
                         </motion.span>
                       ))}
                     </div>
-                    {project.href && (
+                    {project.links?.length ? (
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {project.links.map((link) => (
+                          <a
+                            key={link.href}
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                          >
+                            {link.label}
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </a>
+                        ))}
+                      </div>
+                    ) : project.href && (
                       <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
                         查看完整项目
                         <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -182,9 +215,10 @@ export default function Projects() {
                     )}
                   </div>
                 </div>
-              </a>
-            </AnimatedCard>
-          ))}
+                </CardTag>
+              </AnimatedCard>
+            )
+          })}
         </motion.div>
       </div>
     </section>
