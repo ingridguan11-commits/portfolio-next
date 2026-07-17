@@ -14,7 +14,7 @@ export default function Projects() {
       category: "产品项目",
       description: "熵减是个人秩序系统。目标不是变成完美机器，而是在混乱扩张前，先夺回一点控制权。",
       technologies: ["PWA", "自我管理", "个人秩序系统", "AI产品"],
-      href: "https://entropy-reduction-pwa.vercel.app/",
+      href: "https://ingridguan11-commits.github.io/entropy-reduction-pwa/",
       coverIcon: `${basePath}/portfolio/little-devil.png`,
       imageBackground: "bg-gradient-to-br from-stone-100 via-rose-100 to-slate-200",
       gradient: "from-rose-500 to-red-500",

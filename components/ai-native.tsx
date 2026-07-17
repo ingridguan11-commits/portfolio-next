@@ -124,7 +124,7 @@ export default function AINative() {
         },
         { label: "数据看板", shortLabel: "BI", className: "bg-gradient-to-br from-green-500 to-emerald-700 text-white" },
       ],
-      href: "https://vivo-to-g-dashboard-3qiw.vercel.app/",
+      href: "https://ingridguan11-commits.github.io/vivo-to-g-dashboard/",
       linkLabel: "查看数据看板",
     },
   ]

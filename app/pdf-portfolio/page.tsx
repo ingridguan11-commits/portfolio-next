@@ -33,7 +33,7 @@ const productProjects: Project[] = [
     result: "完成可访问的 PWA 作品，体现产品拆解、快速原型、AI工具协作和可交付意识。",
     image: `${basePath}/portfolio/little-devil.png`,
     imageMode: "icon",
-    link: "https://entropy-reduction-pwa.vercel.app/",
+    link: "https://ingridguan11-commits.github.io/entropy-reduction-pwa/",
   },
   {
     title: "AI口语助手",
@@ -390,7 +390,7 @@ export default function PdfPortfolioPage() {
           <div className={styles.coverCard} style={{ marginTop: 18 }}>
             <p className={styles.eyebrow}>Links</p>
             <h2>主要作品入口</h2>
-            <p className={styles.projectLink}>熵减 PWA：https://entropy-reduction-pwa.vercel.app/</p>
+            <p className={styles.projectLink}>熵减 PWA：https://ingridguan11-commits.github.io/entropy-reduction-pwa/</p>
             <p className={styles.projectLink}>小红书主页：https://xhslink.com/m/1kmgsKXD5cr</p>
             <p className={styles.projectLink}>网页作品集：https://ingridguan11-commits.github.io/portfolio/</p>
           </div>
